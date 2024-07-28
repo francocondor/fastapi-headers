@@ -4,5 +4,5 @@ from fastapi import FastAPI, Header
 app = FastAPI()
 
 @app.get("/dashboard")
-def dashboard(access_token: Annotated[str, Header()]):
+def dashboard(access_token: Annotated[str | None, Header()] = None):
     return "dashboard"
